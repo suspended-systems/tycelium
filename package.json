@@ -3,7 +3,7 @@
     "access": "public"
   },
   "name": "tycelium",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "",
   "scripts": {
     "test": "vitest",
@@ -19,6 +19,8 @@
   "devDependencies": {
     "typescript": "^5.7.3"
   },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "files": [
     "dist"
   ]
