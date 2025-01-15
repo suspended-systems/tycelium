@@ -1,9 +1,10 @@
 {
+  "publishConfig": {
+    "access": "public"
+  },
   "name": "tycelium",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
   "scripts": {
     "test": "vitest",
     "prepublish": "npm run clean && tsc",
@@ -17,5 +18,8 @@
   },
   "devDependencies": {
     "typescript": "^5.7.3"
-  }
+  },
+  "files": [
+    "dist"
+  ]
 }
