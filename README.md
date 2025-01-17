@@ -1,3 +1,9 @@
+# tycelium
+
+> [!WARNING]
+> This package is in alpha.
+> 
+
 ```
 npm i tycelium
 ```
@@ -6,6 +12,4 @@ TypeScript utilities focused on abstract connection. Coupling/decoupling, diagra
 
 Types go deep. Mycelium goes wide.
 
-> [!WARNING]
-> This package is in alpha.
-> 
+https://tycelium.xyz
