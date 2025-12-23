@@ -60,6 +60,8 @@ type OneOrManySourcesToOneTarget<
 	TargetNode = EntityModel,
 > = readonly [OneOrMany<SourceNode>, OneOrMany<Edge>, TargetNode];
 
+// TODO: accept a triplet fn, or automatically define on models
+//		 or fn that lets you describe a shape
 export const parseEntityRelationshipTriplets = (erm: ERM): Array<EntityRelationshipTriplet> => {
 	const oneOrManyEntitySubentityPairs = isEntityModels(erm[0])
 		? [erm as EntitySubentityPair]
