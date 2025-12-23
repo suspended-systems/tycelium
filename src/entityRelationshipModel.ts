@@ -30,6 +30,7 @@ type EntitySubentityPair<
 > = readonly [OneOrMany<Entity>, ...RelationshipSubentityPair<RelationshipNames, Entity>[]];
 
 type RelationshipSubentityPair<
+	// todo: support RelationshipModel instead of RelationshipName, make name camelCased with glypth whereas entities PascalCased no glyph
 	RelationshipNames extends string = string,
 	Entity extends Record<typeof typeFieldName, string> = EntityModel,
 > = readonly [
