@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { reverseOneToManyDictionary } from "./reverseOneToManyDictionary";
+import { reverseOneToManyDictionary } from "../src/reverseOneToManyDictionary";
 
 describe("reverseOneToManyDictionary", () => {
 	const input = {
