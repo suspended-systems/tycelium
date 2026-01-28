@@ -23,5 +23,9 @@ exports.reverseOneToManyDictionary = void 0;
  *
  * const value: "LABEL_CREATED" = output['PX'];
  */
-const reverseOneToManyDictionary = (oneToManyDictionary) => Object.fromEntries(Object.entries(oneToManyDictionary).flatMap(([key, values]) => values.map((value) => [value, key])));
+const reverseOneToManyDictionary = (oneToManyDictionary) => 
+// prettier-ignore
+Object.fromEntries(Object.entries(oneToManyDictionary).flatMap(([key, values]) => values.map((value) => [value, key])));
 exports.reverseOneToManyDictionary = reverseOneToManyDictionary;
+// 										`as unknown` required because Object.fromEntries expects [string, string][]
+// 													 but our return type has literal string keys ['actualKeyA' | 'actualKeyB' | ..., string][]

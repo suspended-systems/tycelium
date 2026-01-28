@@ -20,4 +20,4 @@
  *
  * const value: "LABEL_CREATED" = output['PX'];
  */
-export declare const reverseOneToManyDictionary: <OneToManyDictionary extends Readonly<Record<string, readonly string[]>>>(oneToManyDictionary: OneToManyDictionary) => { [StringArrayValue in OneToManyDictionary[keyof OneToManyDictionary][number]]: { readonly [Key in keyof OneToManyDictionary]-?: StringArrayValue extends OneToManyDictionary[Key][number] ? Key : never; }[keyof OneToManyDictionary]; };
+export declare const reverseOneToManyDictionary: <OneToManyDict extends Readonly<Record<string, readonly string[]>>>(oneToManyDictionary: OneToManyDict) => { [Value in OneToManyDict[keyof OneToManyDict][number]]: { readonly [Key in keyof OneToManyDict]-?: Value extends OneToManyDict[Key][number] ? Key : never; }[keyof OneToManyDict]; };

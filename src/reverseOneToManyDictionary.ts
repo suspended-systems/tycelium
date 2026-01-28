@@ -20,15 +20,17 @@
  *
  * const value: "LABEL_CREATED" = output['PX'];
  */
-export const reverseOneToManyDictionary = <OneToManyDictionary extends Readonly<Record<string, readonly string[]>>>(
-	oneToManyDictionary: OneToManyDictionary,
+export const reverseOneToManyDictionary = <OneToManyDict extends Readonly<Record<string, readonly string[]>>>(
+	oneToManyDictionary: OneToManyDict,
 ): {
-	[StringArrayValue in OneToManyDictionary[keyof OneToManyDictionary][number]]: {
-		readonly [Key in keyof OneToManyDictionary]-?: StringArrayValue extends OneToManyDictionary[Key][number]
-			? Key
-			: never;
-	}[keyof OneToManyDictionary];
+	// see @example above ^^^
+	[Value in OneToManyDict[keyof OneToManyDict][number]]: {
+		readonly [Key in keyof OneToManyDict]-?: Value extends OneToManyDict[Key][number] ? Key : never;
+	}[keyof OneToManyDict];
 } =>
+	// prettier-ignore
 	Object.fromEntries(
-		Object.entries(oneToManyDictionary).flatMap(([key, values]) => values.map((value: any) => [value, key])),
-	);
+		Object.entries(oneToManyDictionary).flatMap(([key, values]) =>
+			values.map((value) => [value as unknown, key])));
+// 										`as unknown` required because Object.fromEntries expects [string, string][]
+// 													 but our return type has literal string keys ['actualKeyA' | 'actualKeyB' | ..., string][]
