@@ -1,3 +1,3 @@
 export { reverseOneToManyDictionary } from "./reverseOneToManyDictionary";
-export { isNullish, isTruthy } from "./filter";
+export { isNotNullish, isTruthy } from "./filter";
 export { parseEntityRelationshipTriplets, type ERM } from "./entityRelationshipModel";
